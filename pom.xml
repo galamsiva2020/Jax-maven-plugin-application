@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.davidmoten</groupId>
+        <artifactId>sonatype-parent</artifactId>
+        <version>0.1</version>
+    </parent>
+    <artifactId>jax-maven-plugin-parent</artifactId>
+    <version>0.1.9-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <url>http://github.com/davidmoten/jax-maven-plugin</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <compiler.plugin.version>3.8.0</compiler.plugin.version>
+        <!-- note that if you change the jaxb version you need to change 
+            the hard-coded version in XjcMojo.java as well -->
+
+        <!-- e.g. jaxb-ri -->
+        <com.sun.xml.bind.version>2.3.0.1</com.sun.xml.bind.version>
+
+        <!-- e.g. jaxws-rt -->
+        <com.sun.xml.ws.version>2.3.2</com.sun.xml.ws.version>
+
+        <!-- e.g. jaxb-api -->
+        <javax.xml.bind.version>2.3.1</javax.xml.bind.version>
+
+        <junit.version>4.12</junit.version>
+        <scm.url>scm:git:https://github.com/davidmoten/jax-maven-plugin.git</scm.url>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/davidmoten/jax-maven-plugin</url>
+    </ciManagement>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/davidmoten/jax-maven-plugin/issues</url>
+    </issueManagement>
+
+    <inceptionYear>2019</inceptionYear>
+    <developers>
+        <developer>
+            <id>dave</id>
+            <name>Dave Moten</name>
+            <url>https://github.com/davidmoten/</url>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+10</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>${scm.url}</connection>
+        <developerConnection>${scm.url}</developerConnection>
+        <url>${scm.url}</url>
+        <tag>0.1.1</tag>
+    </scm>
+
+    <modules>
+        <module>jax-maven-plugin-core</module>
+        <module>jax-maven-plugin</module>
+        <module>jax-maven-plugin-test-jaxb</module>
+        <module>jax-maven-plugin-test</module>
+    </modules>
+</project>
